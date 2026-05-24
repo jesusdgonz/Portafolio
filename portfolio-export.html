@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html data-theme="alfred-dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jesus Gonzalez — Portafolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@5" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* { font-family: 'Inter', sans-serif; }
+
+html { scroll-behavior: smooth; }
+
+::selection {
+  background: oklch(var(--p) / 0.3);
+}
+
+.section-fade {
+  animation: fadeUp 0.6s ease-out both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-card:hover img {
+  transform: scale(1.03);
+}
+
+.line-decoration::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 2px;
+  margin-top: 12px;
+}
+
+
+    [data-theme='alfred-light'] {
+      color-scheme: light;
+      --color-base-100: #f5f5f5; --color-base-200: #eaeaea; --color-base-300: #dfdfdf;
+      --color-base-content: #1c1c1e; --color-primary: #4f6f52; --color-primary-content: #ffffff;
+      --color-secondary: #ff7f50; --color-secondary-content: #1c1c1e;
+      --color-accent: #ff7f50; --color-accent-content: #1c1c1e;
+      --color-neutral: #1f1f23; --color-neutral-content: #e8e8ec;
+      --color-info: #4a7c9b; --color-info-content: #f4f4f5;
+      --color-success: #3d8b6e; --color-success-content: #f4f4f5;
+      --color-warning: #b8860b; --color-warning-content: #1c1c1e;
+      --color-error: #9e3d32; --color-error-content: #f4f4f5;
+      --radius-selector:0;--radius-field:0.25rem;--radius-box:0.25rem;--border:1px;--depth:1;--noise:0;
+    }
+    [data-theme='alfred-dark'] {
+      color-scheme: dark;
+      --color-base-100: #121215; --color-base-200: #1a1a1e; --color-base-300: #252529;
+      --color-base-content: #f4f4f5; --color-primary: #4f6f52; --color-primary-content: #ffffff;
+      --color-secondary: #ff7f50; --color-secondary-content: #1c1c1e;
+      --color-accent: #ff7f50; --color-accent-content: #1c1c1e;
+      --color-neutral: #3a3a42; --color-neutral-content: #b8b8c0;
+      --color-info: #4a7c9b; --color-info-content: #f4f4f5;
+      --color-success: #3d8b6e; --color-success-content: #f4f4f5;
+      --color-warning: #b8860b; --color-warning-content: #1c1c1e;
+      --color-error: #9e3d32; --color-error-content: #f4f4f5;
+      --radius-selector:0;--radius-field:0.25rem;--radius-box:0.25rem;--border:1px;--depth:1;--noise:0;
+    }
+
+    .line-decoration::after {
+      background: oklch(var(--color-primary));
+    }
+  </style>
+  <script>
+    (function() {
+      var theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'alfred-dark' : 'alfred-light';
+      document.documentElement.setAttribute('data-theme', theme);
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        document.documentElement.setAttribute('data-theme', e.matches ? 'alfred-dark' : 'alfred-light');
+      });
+    })();
+  </script>
+</head>
+<body class="bg-base-100 text-base-content min-h-screen">
+
+  <!-- Navbar -->
+  <div class="navbar bg-base-100/90 backdrop-blur-md sticky top-0 z-50 border-b border-base-content/5 px-6">
+    <div class="navbar-start">
+      <a href="#hero" class="btn btn-ghost text-base font-semibold tracking-tight text-base-content">Jesus Gonzalez</a>
+    </div>
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal gap-0">
+        <li><a href="#hero" class="btn btn-ghost btn-sm text-xs uppercase tracking-widest font-medium text-base-content/50 hover:text-base-content">Inicio</a></li>
+        <li><a href="#about" class="btn btn-ghost btn-sm text-xs uppercase tracking-widest font-medium text-base-content/50 hover:text-base-content">Sobre Mí</a></li>
+        <li><a href="#projects" class="btn btn-ghost btn-sm text-xs uppercase tracking-widest font-medium text-base-content/50 hover:text-base-content">Proyectos</a></li>
+        <li><a href="#services" class="btn btn-ghost btn-sm text-xs uppercase tracking-widest font-medium text-base-content/50 hover:text-base-content">Servicios</a></li>
+        <li><a href="#contact" class="btn btn-ghost btn-sm text-xs uppercase tracking-widest font-medium text-base-content/50 hover:text-base-content">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="navbar-end"></div>
+  </div>
+
+  <!-- Hero -->
+  <section id="hero" class="min-h-[85vh] flex flex-col items-center justify-center text-center px-6 relative section-fade">
+    <div class="max-w-2xl mx-auto space-y-8">
+      <p class="text-xs uppercase tracking-[0.3em] text-base-content/40 font-medium">Desarrollo Web &amp; Automatización</p>
+      <h1 class="text-4xl md:text-6xl font-bold text-base-content leading-tight tracking-tight">Jesus Gonzalez</h1>
+      <p class="text-lg md:text-xl text-base-content/50 max-w-lg mx-auto leading-relaxed font-light">Creo experiencias digitales que conectan marcas con sus clientes a través de tecnología y automatización inteligente.</p>
+      <div class="flex flex-wrap justify-center gap-4 pt-2">
+        <a href="#projects" class="btn btn-primary btn-md rounded-full px-8 text-sm font-medium">Ver Proyectos</a>
+        <a href="#contact" class="btn btn-ghost btn-md rounded-full px-8 text-sm font-medium text-base-content/60">Contacto</a>
+      </div>
+    </div>
+    <a href="#about" class="absolute bottom-10 text-base-content/20 hover:text-base-content/50 transition-colors">↓</a>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-24 px-6 section-fade">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-xs uppercase tracking-[0.3em] text-primary font-medium mb-4">Sobre Mí</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-base-content tracking-tight mb-10 line-decoration">Conóceme</h2>
+      <p class="text-base-content/60 text-base leading-loose">Soy un profesional especializado en desarrollo web y automatización digital, con experiencia creando páginas web que integran herramientas de automatización para brindar una atención al cliente más eficiente, personalizada y oportuna.<br><br>He trabajado con empresas de diversos sectores — desde construcción hasta servicios profesionales — ayudándoles a digitalizar su presencia online con sitios web modernos que incluyen chatbots inteligentes, formularios automatizados, sistemas de cotización en tiempo real y flujos de seguimiento que garantizan que ningún prospecto quede sin respuesta.<br><br>Mi enfoque combina diseño limpio y funcional con tecnología que trabaja las 24 horas, permitiendo a mis clientes enfocarse en lo que mejor saben hacer mientras la tecnología se encarga de captar, atender y retener a sus clientes.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8">
+        <div class="flex items-center gap-3 text-base-content/50 text-sm">⚡ Automatización &amp; Web</div>
+        <div class="flex items-center gap-3 text-base-content/50 text-sm">👥 Enfocado en resultados</div>
+        <div class="flex items-center gap-3 text-base-content/50 text-sm">🤖 Chatbots inteligentes</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-24 px-6 bg-base-200/30 section-fade">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-xs uppercase tracking-[0.3em] text-primary font-medium mb-4">Portafolio</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-base-content tracking-tight mb-4 line-decoration">Proyectos Realizados</h2>
+      <p class="text-base-content/40 text-sm max-w-lg mb-12">Cada proyecto refleja un compromiso con la calidad, la atención al detalle y soluciones que generan resultados reales para mis clientes.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+    <div class="project-card group cursor-pointer">
+      <div class="relative overflow-hidden rounded-xl bg-base-300 aspect-[4/3]">
+        <img src="https://912ec8c7ff.cbaul-cdnwnd.com/fbf05fcc8064ddefbfb57bdbcd633ca9/200000140-1021410216/1000183791-7.jpeg?ph=912ec8c7ff" alt="Construcción & Servicios ZF" class="w-full h-full object-cover transition-transform duration-500" />
+        <div class="project-overlay absolute inset-0 bg-base-100/85 backdrop-blur-sm opacity-0 transition-opacity duration-300 flex items-center justify-center">
+          <a href="https://construccion-servicios-jz.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm rounded-full gap-2">↗ Ver proyecto</a>
+        </div>
+        <span class="absolute top-3 left-3 badge badge-primary badge-sm text-xs">Destacado</span>
+      </div>
+      <div class="pt-4 pb-2">
+        <h3 class="font-semibold text-base-content text-sm">Construcción & Servicios ZF</h3>
+        <p class="text-base-content/40 text-xs mt-1 line-clamp-2">Sitio web profesional para empresa constructora en Santiago de Chile. Incluye catálogo de servicios con precios, galería de proyectos, formulario de contacto y chatbot de atención al cliente con cotización automatizada 24/7.</p>
+        <div class="flex flex-wrap gap-1.5 mt-3"><span class="text-[10px] uppercase tracking-wider text-base-content/30 font-medium">Landing Page</span><span class="text-[10px] uppercase tracking-wider text-base-content/30 font-medium">Chatbot</span><span class="text-[10px] uppercase tracking-wider text-base-content/30 font-medium">Automatización</span><span class="text-[10px] uppercase tracking-wider text-base-content/30 font-medium">Construcción</span></div>
+      </div>
+    </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-24 px-6 section-fade">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-xs uppercase tracking-[0.3em] text-primary font-medium mb-4">Servicios</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-base-content tracking-tight mb-4 line-decoration">Lo Que Ofrezco</h2>
+      <p class="text-base-content/40 text-sm max-w-lg mb-14">Soluciones digitales integrales para que tu negocio destaque y atienda mejor a cada cliente.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+    <div class="group">
+      <div class="w-12 h-12 rounded-xl bg-base-200 flex items-center justify-center text-xl mb-4 group-hover:bg-primary group-hover:text-primary-content transition-all duration-300">🌐</div>
+      <h3 class="font-semibold text-base-content text-sm mb-2">Desarrollo Web</h3>
+      <p class="text-base-content/40 text-xs leading-relaxed">Sitios web modernos, rápidos y 100% responsivos que representan tu marca profesionalmente.</p>
+    </div>
+    <div class="group">
+      <div class="w-12 h-12 rounded-xl bg-base-200 flex items-center justify-center text-xl mb-4 group-hover:bg-primary group-hover:text-primary-content transition-all duration-300">⚡</div>
+      <h3 class="font-semibold text-base-content text-sm mb-2">Automatización</h3>
+      <p class="text-base-content/40 text-xs leading-relaxed">Flujos automatizados que optimizan procesos, ahorran tiempo y eliminan tareas repetitivas.</p>
+    </div>
+    <div class="group">
+      <div class="w-12 h-12 rounded-xl bg-base-200 flex items-center justify-center text-xl mb-4 group-hover:bg-primary group-hover:text-primary-content transition-all duration-300">💬</div>
+      <h3 class="font-semibold text-base-content text-sm mb-2">Chatbots & Atención</h3>
+      <p class="text-base-content/40 text-xs leading-relaxed">Asistentes virtuales que atienden a tus clientes 24/7 con respuestas inmediatas y personalizadas.</p>
+    </div>
+    <div class="group">
+      <div class="w-12 h-12 rounded-xl bg-base-200 flex items-center justify-center text-xl mb-4 group-hover:bg-primary group-hover:text-primary-content transition-all duration-300">📊</div>
+      <h3 class="font-semibold text-base-content text-sm mb-2">Landing Pages</h3>
+      <p class="text-base-content/40 text-xs leading-relaxed">Páginas de aterrizaje optimizadas para convertir visitantes en clientes potenciales.</p>
+    </div>
+    <div class="group">
+      <div class="w-12 h-12 rounded-xl bg-base-200 flex items-center justify-center text-xl mb-4 group-hover:bg-primary group-hover:text-primary-content transition-all duration-300">📱</div>
+      <h3 class="font-semibold text-base-content text-sm mb-2">Diseño Responsivo</h3>
+      <p class="text-base-content/40 text-xs leading-relaxed">Experiencias perfectas en cualquier dispositivo — móvil, tablet o escritorio.</p>
+    </div>
+    <div class="group">
+      <div class="w-12 h-12 rounded-xl bg-base-200 flex items-center justify-center text-xl mb-4 group-hover:bg-primary group-hover:text-primary-content transition-all duration-300">🔗</div>
+      <h3 class="font-semibold text-base-content text-sm mb-2">Integraciones</h3>
+      <p class="text-base-content/40 text-xs leading-relaxed">Conexión con WhatsApp, CRMs, email marketing y herramientas de gestión empresarial.</p>
+    </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-24 px-6 bg-base-200/30 section-fade">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-xs uppercase tracking-[0.3em] text-primary font-medium mb-4">Contacto</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-base-content tracking-tight mb-4 line-decoration">Trabajemos Juntos</h2>
+      <p class="text-base-content/40 text-sm max-w-lg mb-14">¿Tienes un proyecto en mente? Cuéntame tu idea y encontremos la mejor solución juntos.</p>
+      <div class="grid md:grid-cols-5 gap-12">
+        <div class="md:col-span-2 space-y-6">
+          <a href="mailto:jesusdavidg93@gmail.com" class="flex items-center gap-3 text-base-content/50 hover:text-primary transition-colors text-sm">✉️ <span>jesusdavidg93@gmail.com</span></a>
+        </div>
+        <div class="md:col-span-3 space-y-4">
+          <input type="text" id="contact-name" placeholder="Tu nombre" class="input input-bordered w-full bg-base-100 text-sm" />
+          <input type="email" id="contact-email" placeholder="Tu email" class="input input-bordered w-full bg-base-100 text-sm" />
+          <textarea id="contact-msg" placeholder="Cuéntame sobre tu proyecto..." class="textarea textarea-bordered w-full bg-base-100 h-32 text-sm"></textarea>
+          <button class="btn btn-primary rounded-full px-8 text-sm" onclick="sendContact()">✉ Enviar Mensaje</button>
+          <div id="contact-success" class="hidden alert bg-primary/10 border-0 text-sm">✅ Mensaje enviado. Te responderé pronto.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 px-6 border-t border-base-content/5 text-center">
+    <p class="text-base-content/25 text-xs tracking-wider">&copy; 2026 Jesus Gonzalez. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    function sendContact() {
+      var name = document.getElementById('contact-name').value;
+      var email = document.getElementById('contact-email').value;
+      var msg = document.getElementById('contact-msg').value;
+      if (!name || !email || !msg) return;
+      // In production, connect to your email service or form handler
+      var mailto = 'mailto:jesusdavidg93@gmail.com?subject=Contacto desde Portafolio — ' + encodeURIComponent(name) + '&body=' + encodeURIComponent('Nombre: ' + name + '\nEmail: ' + email + '\n\n' + msg);
+      window.open(mailto);
+      document.getElementById('contact-success').classList.remove('hidden');
+      document.getElementById('contact-name').value = '';
+      document.getElementById('contact-email').value = '';
+      document.getElementById('contact-msg').value = '';
+      setTimeout(function() { document.getElementById('contact-success').classList.add('hidden'); }, 4000);
+    }
+  </script>
+
+</body>
+</html>
